@@ -1,7 +1,7 @@
 # https://github.com/docker-library/postgres/blob/master/11/alpine/Dockerfile
 FROM postgres:11.9-alpine
 
-MAINTAINER Ivan Muratov, binakot@gmail.com
+MAINTAINER Anastasia Lukina, anastasia.lukina.es@gmail.com
 
 # https://docs.timescale.com/v1.7/getting-started/installation/ubuntu/installation-source
 # https://github.com/timescale/timescaledb-docker
@@ -90,3 +90,5 @@ RUN set -ex \
 COPY ./init-timescaledb.sh /docker-entrypoint-initdb.d/1.timescaledb.sh
 COPY ./init-pipelinedb.sh /docker-entrypoint-initdb.d/2.pipelinedb.sh
 COPY ./init-postgres.sh /docker-entrypoint-initdb.d/3.postgres.sh
+COPY ./init-grafana.sh /docker-entrypoint-initdb.d/3.grafana.sh
+
